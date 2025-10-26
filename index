@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Farming - Filosofi Masanobu Fukuoka</title>
+    <style>
+        /* Reset dan variabel warna */
+        :root {
+            --warna-alam: #8a9a5b;
+            --warna-alam-muda: #c8d5b9;
+            --warna-alam-tua: #4a6741;
+            --warna-tanah: #a68a64;
+            --warna-krem: #faf3e0;
+            --warna-putih: #ffffff;
+            --warna-hitam: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--warna-krem);
+            color: var(--warna-hitam);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--warna-alam-tua);
+            color: var(--warna-putih);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--warna-putih);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--warna-alam-muda);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(74, 103, 65, 0.7), rgba(74, 103, 65, 0.7)), url('https://source.unsplash.com/1600x900/?farm,nature') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--warna-putih);
+            padding: 0 1rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--warna-alam);
+            color: var(--warna-putih);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--warna-alam-tua);
+        }
+        
+        /* Section Umum */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--warna-alam-tua);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--warna-alam);
+        }
+        
+        /* Tentang Fukuoka */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Filosofi */
+        .principles {
+            background-color: var(--warna-alam-muda);
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .principle-card {
+            background-color: var(--warna-putih);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .principle-card h3 {
+            color: var(--warna-alam-tua);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .principle-card h3 i {
+            margin-right: 10px;
+            color: var(--warna-alam);
+        }
+        
+        /* Galeri */
+        .gallery {
+            position: relative;
+        }
+        
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid var(--warna-alam);
+            color: var(--warna-alam-tua);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--warna-alam);
+            color: var(--warna-putih);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--warna-putih);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Update Section */
+        .update-form {
+            background-color: var(--warna-putih);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--warna-alam-tua);
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Interaksi Pengguna */
+        .interaction {
+            background-color: var(--warna-alam-muda);
+        }
+        
+        .comments-section {
+            background-color: var(--warna-putih);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+        
+        .comment {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            color: var(--warna-alam-tua);
+        }
+        
+        .comment-date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--warna-alam-tua);
+            color: var(--warna-putih);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--warna-alam);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--warna-alam-muda);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--warna-putih);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--warna-putih);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--warna-alam);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Modal untuk gambar */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-content img, .modal-content video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .modal-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: var(--warna-putih);
+            padding: 1rem;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--warna-putih);
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    Natural Farming
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Fukuoka</a></li>
+                        <li><a href="#principles">Filosofi</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#updates">Update</a></li>
+                        <li><a href="#interaction">Interaksi</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Natural Farming: Kembali ke Alam</h1>
+            <p>Mengikuti filosofi Masanobu Fukuoka tentang pertanian alami yang harmonis dengan alam, tanpa pengolahan tanah, tanpa pupuk kimia, tanpa pestisida, dan tanpa penyiangan.</p>
+            <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!-- Tentang Fukuoka -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Masanobu Fukuoka</h2>
+                <p>Pelopor Pertanian Alami</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Masanobu Fukuoka (1913-2008) adalah seorang petani dan filsuf Jepang yang mengembangkan metode pertanian alami, juga dikenal sebagai "pertanian tidak melakukan apa-apa" atau "do-nothing farming".</p>
+                    <p>Fukuoka percaya bahwa pertanian modern telah menyimpang dari hubungan alami dengan alam, dan metode pertaniannya bertujuan untuk memulihkan hubungan itu dengan bekerja bersama alam, bukan melawannya.</p>
+                    <p>Karyanya yang terkenal, "The One-Straw Revolution", telah menginspirasi petani di seluruh dunia untuk mempraktikkan pertanian berkelanjutan yang menghormati siklus alam.</p>
+                    <p>Filosofi Fukuoka didasarkan pada prinsip-prinsip kesederhanaan, pengamatan, dan kerja sama dengan alam daripada dominasi atasnya.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/600x400/?masanobu,fukuoka" alt="Masanobu Fukuoka">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofi Fukuoka -->
+    <section id="principles" class="principles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Empat Prinsip Pertanian Alami</h2>
+                <p>Fondasi filosofi Masanobu Fukuoka</p>
+            </div>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3><i class="fas fa-ban"></i> Tanpa Pengolahan Tanah</h3>
+                    <p>Tanah memiliki kemampuan alami untuk mengolah dirinya sendiri melalui penetrasi akar, aktivitas mikroorganisme, hewan kecil, dan tumbuhan.</p>
+                </div>
+                <div class="principle-card">
+                    <h3><i class="fas fa-times-circle"></i> Tanpa Pupuk Kimia</h3>
+                    <p>Biarkan tumbuhan dan hewan mempertahankan kesuburan tanah secara alami. Pupuk hijau dan mulsa dari sisa tanaman cukup untuk menyuburkan tanah.</p>
+                </div>
+                <div class="principle-card">
+                    <h3><i class="fas fa-bug"></i> Tanpa Pestisida</h3>
+                    <p>Dalam ekosistem yang seimbang, serangga dan penyakit tidak akan pernah mencapai tingkat yang memerlukan penggunaan bahan kimia beracun.</p>
+                </div>
+                <div class="principle-card">
+                    <h3><i class="fas fa-tree"></i> Tanpa Penyiangan</h3>
+                    <p>Gulma berperan dalam membangun kesuburan tanah dan mengatur keseimbangan komunitas biologis. Biarkan mereka tumbuh bersama tanaman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Natural Farming</h2>
+                <p>Perkembangan dan praktik pertanian alami</p>
+            </div>
+            
+            <div class="gallery-controls">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="plants">Tanaman</button>
+                <button class="filter-btn" data-filter="chickens">Ayam</button>
+                <button class="filter-btn" data-filter="farm">Kebun</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Item galeri tanaman -->
+                <div class="gallery-item" data-category="plants">
+                    <img src="https://source.unsplash.com/600x400/?rice,field" alt="Padi di sawah">
+                    <div class="gallery-caption">
+                        <h3>Padi di Sawah Alami</h3>
+                        <p>"Ketika tanah dibiarkan tidak terganggu, ia mempertahankan kesuburan alaminya." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="plants">
+                    <img src="https://source.unsplash.com/600x400/?vegetable,garden" alt="Kebun sayuran">
+                    <div class="gallery-caption">
+                        <h3>Kebun Sayuran Organik</h3>
+                        <p>"Tujuan pertanian bukanlah menanam tanaman, tetapi kultivasi dan penyempurnaan manusia." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="plants">
+                    <img src="https://source.unsplash.com/600x400/?wheat,field" alt="Gandum tumbuh">
+                    <div class="gallery-caption">
+                        <h3>Gandum di Ladang Alami</h3>
+                        <p>"Bumi tidak membutuhkan pupuk; ia membutuhkan perlindungan." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <!-- Item galeri ayam -->
+                <div class="gallery-item" data-category="chickens">
+                    <img src="https://source.unsplash.com/600x400/?chicken,farm" alt="Ayam di peternakan">
+                    <div class="gallery-caption">
+                        <h3>Ayam di Peternakan Alami</h3>
+                        <p>"Hewan bukanlah mesin produksi; mereka adalah bagian dari ekosistem yang hidup." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="chickens">
+                    <img src="https://source.unsplash.com/600x400/?chicks,farm" alt="Anak ayam">
+                    <div class="gallery-caption">
+                        <h3>Anak Ayam di Alam Terbuka</h3>
+                        <p>"Biarkan hewan hidup sesuai dengan sifat alami mereka, dan mereka akan memberikan yang terbaik." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="chickens">
+                    <img src="https://source.unsplash.com/600x400/?free,range,chicken" alt="Ayam berkeliaran bebas">
+                    <div class="gallery-caption">
+                        <h3>Ayam Berkeliaran Bebas</h3>
+                        <p>"Ketika kita menghormati alam, alam akan merespons dengan kelimpahan." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <!-- Item galeri kebun -->
+                <div class="gallery-item" data-category="farm">
+                    <img src="https://source.unsplash.com/600x400/?natural,farm" alt="Pemandangan pertanian alami">
+                    <div class="gallery-caption">
+                        <h3>Pemandangan Pertanian Alami</h3>
+                        <p>"Pertanian alami adalah jalan kembali ke kesederhanaan, keharmonisan dengan alam." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="farm">
+                    <img src="https://source.unsplash.com/600x400/?orchard,fruit" alt="Kebun buah-buahan">
+                    <div class="gallery-caption">
+                        <h3>Kebun Buah-buahan Alami</h3>
+                        <p>"Buah terbaik tumbuh dari pohon yang dibiarkan tumbuh secara alami." - Masanobu Fukuoka</p>
+                    </div>
+                </div>
+                
+                <!-- Video -->
+                <div class="gallery-item" data-category="farm">
+                    <video controls>
+                        <source src="#" type="video/mp4">
+                        Browser Anda tidak mendukung pemutaran video.
+                    </video>
+                    <div class="gallery-caption">
+                        <h3>Video Pertanian Alami</h3>
+                        <p>Update perkembangan kebun alami kami (video dapat diganti dengan video Anda sendiri)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update Section -->
+    <section id="updates" class="updates">
+        <div class="container">
+            <div class="section-title">
+                <h2>Update Perkembangan Farming</h2>
+                <p>Bagikan perkembangan terbaru dari praktik pertanian alami Anda</p>
+            </div>
+            
+            <div class="update-form">
+                <h3>Tambah Update Baru</h3>
+                <form id="updateForm">
+                    <div class="form-group">
+                        <label for="updateTitle">Judul Update</label>
+                        <input type="text" id="updateTitle" placeholder="Masukkan judul update" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateType">Jenis Update</label>
+                        <select id="updateType">
+                            <option value="plants">Tanaman</option>
+                            <option value="chickens">Ayam</option>
+                            <option value="farm">Kebun</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateDescription">Deskripsi</label>
+                        <textarea id="updateDescription" placeholder="Ceritakan perkembangan terbaru" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateMedia">Unggah Gambar/Video</label>
+                        <input type="file" id="updateMedia" accept="image/*,video/*">
+                    </div>
+                    <button type="submit" class="btn">Tambah Update</button>
+                </form>
+            </div>
+            
+            <div id="updatesContainer" class="gallery-grid">
+                <!-- Update akan ditambahkan di sini melalui JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interaksi Pengguna -->
+    <section id="interaction" class="interaction">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interaksi dengan Pengunjung</h2>
+                <p>Bagikan pemikiran, pertanyaan, atau pengalaman Anda tentang pertanian alami</p>
+            </div>
+            
+            <div class="comments-section">
+                <div class="comment-form">
+                    <h3>Tinggalkan Komentar</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="commentName">Nama</label>
+                            <input type="text" id="commentName" placeholder="Masukkan nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="commentText">Komentar</label>
+                            <textarea id="commentText" placeholder="Tulis komentar Anda di sini" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Komentar</button>
+                    </form>
+                </div>
+                
+                <div id="commentsContainer">
+                    <!-- Komentar akan ditambahkan di sini melalui JavaScript -->
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">Petani Alami</span>
+                            <span class="comment-date">15 Juni 2023</span>
+                        </div>
+                        <p>Terima kasih telah berbagi filosofi Fukuoka. Saya telah menerapkan prinsip-prinsipnya di kebun saya dan hasilnya luar biasa! Tanah menjadi lebih subur dan tanaman lebih tahan terhadap hama.</p>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">Pecinta Alam</span>
+                            <span class="comment-date">10 Juni 2023</span>
+                        </div>
+                        <p>Sangat menginspirasi! Saya ingin sekali mencoba metode pertanian alami ini. Apakah ada buku atau sumber daya lain yang Anda rekomendasikan untuk pemula?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Kami adalah komunitas yang berdedikasi untuk mempraktikkan dan menyebarkan filosofi pertanian alami Masanobu Fukuoka.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Fukuoka</a></li>
+                        <li><a href="#principles">Filosofi</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#updates">Update</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Pertanian Alami No. 123</li>
+                        <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@naturalfarming.id</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Natural Farming - Filosofi Masanobu Fukuoka. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal untuk gambar -->
+    <div id="imageModal" class="modal">
+        <div class="close-modal">&times;</div>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+            <div class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter Galeri
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Hapus kelas active dari semua tombol
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Tambahkan kelas active ke tombol yang diklik
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Modal untuk gambar
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const closeModal = document.querySelector('.close-modal');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img, video');
+                    const caption = this.querySelector('.gallery-caption');
+                    const title = caption.querySelector('h3').textContent;
+                    const description = caption.querySelector('p').textContent;
+                    
+                    if (img.tagName === 'IMG') {
+                        modalImage.src = img.src;
+                        modalImage.style.display = 'block';
+                    } else {
+                        // Untuk video, kita tidak menampilkan di modal
+                        return;
+                    }
+                    
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    modal.style.display = 'flex';
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Form Update
+            const updateForm = document.getElementById('updateForm');
+            const updatesContainer = document.getElementById('updatesContainer');
+            
+            updateForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const title = document.getElementById('updateTitle').value;
+                const type = document.getElementById('updateType').value;
+                const description = document.getElementById('updateDescription').value;
+                const mediaFile = document.getElementById('updateMedia').files[0];
+                
+                // Buat elemen update baru
+                const updateItem = document.createElement('div');
+                updateItem.className = 'gallery-item';
+                updateItem.setAttribute('data-category', type);
+                
+                let mediaElement = '';
+                if (mediaFile) {
+                    if (mediaFile.type.startsWith('image/')) {
+                        mediaElement = `<img src="${URL.createObjectURL(mediaFile)}" alt="${title}">`;
+                    } else if (mediaFile.type.startsWith('video/')) {
+                        mediaElement = `<video controls><source src="${URL.createObjectURL(mediaFile)}" type="${mediaFile.type}">Browser Anda tidak mendukung pemutaran video.</video>`;
+                    }
+                } else {
+                    // Jika tidak ada media, gunakan placeholder
+                    mediaElement = `<img src="https://source.unsplash.com/600x400/?${type}" alt="${title}">`;
+                }
+                
+                updateItem.innerHTML = `
+                    ${mediaElement}
+                    <div class="gallery-caption">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                    </div>
+                `;
+                
+                updatesContainer.prepend(updateItem);
+                
+                // Reset form
+                updateForm.reset();
+                
+                // Tambahkan event listener untuk modal ke update baru
+                updateItem.addEventListener('click', function() {
+                    const img = this.querySelector('img, video');
+                    const caption = this.querySelector('.gallery-caption');
+                    const title = caption.querySelector('h3').textContent;
+                    const description = caption.querySelector('p').textContent;
+                    
+                    if (img.tagName === 'IMG') {
+                        modalImage.src = img.src;
+                        modalImage.style.display = 'block';
+                    } else {
+                        // Untuk video, kita tidak menampilkan di modal
+                        return;
+                    }
+                    
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    modal.style.display = 'flex';
+                });
+                
+                alert('Update berhasil ditambahkan!');
+            });
+            
+            // Form Komentar
+            const commentForm = document.getElementById('commentForm');
+            const commentsContainer = document.getElementById('commentsContainer');
+            
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('commentName').value;
+                const text = document.getElementById('commentText').value;
+                const date = new Date().toLocaleDateString('id-ID', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment';
+                commentElement.innerHTML = `
+                    <div class="comment-header">
+                        <span class="comment-author">${name}</span>
+                        <span class="comment-date">${date}</span>
+                    </div>
+                    <p>${text}</p>
+                `;
+                
+                commentsContainer.prepend(commentElement);
+                
+                // Reset form
+                commentForm.reset();
+                
+                alert('Komentar berhasil dikirim!');
+            });
+        });
+    </script>
+</body>
+</html>
